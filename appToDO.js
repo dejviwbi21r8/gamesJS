@@ -65,7 +65,7 @@ if(!gameEnded){
     score[activePlayer] += roundScore;
     document.querySelector("#score-"+activePlayer).textContent=score[activePlayer];
 
-    if(score[activePlayer] >=200){
+    if(score[activePlayer] >=150){
 
         gameEnded=true;
         document.querySelector("#name-"+activePlayer).textContent="Winner!";
@@ -76,8 +76,8 @@ if(!gameEnded){
         roundScore=0;
         document.querySelector("#current-"+activePlayer).textContent="0";
         activePlayer = (activePlayer+1)%2;
+        document.querySelector(".dice").style.display="none";
         document.querySelector(".dice1").style.display="none";
-        document.querySelector(".dice2").style.display="none";
         document.querySelector(".player-0-panel").classList.toggle("active");
         document.querySelector(".player-1-panel").classList.toggle("active");
     }
